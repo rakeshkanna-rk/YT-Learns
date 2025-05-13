@@ -1,0 +1,42 @@
+@media screen and (min-width: 960px) {
+  :root {
+    --side-pad: 15px 80px;
+    --hero-h1: 4rem;
+    --h1: 3rem;
+    --p: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  :root {
+    --side-pad: 15px;
+    --hero-h1: 2.5rem;
+    --h1: 2rem;
+    --p: 1rem;
+  }
+}
+
+:root {
+  --bg-color: #010101;
+  --c-grey: #808080;
+  --c-white: #fefefe;
+  --c-d-gray: #1a1a1a;
+  --c-glass: rgba(255, 255, 255, 0.026);
+
+  --blue-r-grad: radial-gradient(
+    96.28% 95.79% at 3.72% 100%,
+    #467aff 0%,
+    #001f6f 100%
+  );
+
+  --green-r-grad: radial-gradient(
+      96.28% 95.79% at 3.72% 100%,
+      #00ae00 0%,
+      #00391d 100%
+    );
+}
+
+body {
+  background: var(--bg-color);
+  overflow-x: hidden;
+}

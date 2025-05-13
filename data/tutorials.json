@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Vue 3 Crash Course",
+    "description": "Learn Vue 3 from scratch.",
+    "tags": ["vue", "frontend", "javascript"],
+    "link": "https://youtube.com/...",
+    "documents": [
+      {
+        "title": "Vue Cheatsheet",
+        "url": "https://example.com/vue.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Tailwind Basics",
+    "description": "Style fast with Tailwind.",
+    "tags": ["css", "tailwind", "design"],
+    "link": "https://youtube.com/..."
+  }
+]
