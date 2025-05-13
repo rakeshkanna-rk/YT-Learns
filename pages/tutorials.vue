@@ -108,8 +108,10 @@ watch(
 </script>
 
 <template>
-  <div class="p-4 max-w-5xl mx-auto">
-    <h1 class="text-2xl font-bold mb-4">Tutorials</h1>
+
+  <SectionHeader title="Tutorials" subtitle="Find the perfect YouTube video for your learning needs"/>
+
+  <div class="p-4 max-w-5xl mx-auto mt-[50px]">
 
     <!-- Search Input -->
     <form @submit.prevent="handleLocalSearch">
@@ -131,10 +133,10 @@ watch(
         @click="setTag(tag)"
         :class="[
           activeTag === tag
-            ? 'bg-[#2563FF] text-white'
-            : 'border-gray-300 text-gray-600',
+            ? 'tag-active'
+            : 'tag',
         ]"
-        class="px-3 py-1 rounded border text-sm"
+        class="tag"
       >
         {{ tag }}
       </button>
@@ -224,5 +226,20 @@ form img {
 
 .search-btn:hover {
   cursor: pointer;
+}
+
+.tag {
+  padding: 5px 10px;
+  border: 1px solid var(--c-grey);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: var(--c-grey);
+}
+
+.tag-active {
+  background: var(--c-blue);
+  border: none;
+  color: var(--c-white);
 }
 </style>

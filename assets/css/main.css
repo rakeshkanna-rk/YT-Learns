@@ -22,6 +22,7 @@
   --c-white: #fefefe;
   --c-d-gray: #1a1a1a;
   --c-glass: rgba(255, 255, 255, 0.026);
+  --c-blue: #2563FF;
 
   --blue-r-grad: radial-gradient(
     96.28% 95.79% at 3.72% 100%,

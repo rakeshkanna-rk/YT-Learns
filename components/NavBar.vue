@@ -1,7 +1,7 @@
 <template>
   <div class="lighting">
     <nav>
-      <img src="@/assets/logo.svg" alt="Logo" />
+      <img src="@/assets/logo.svg" alt="Logo" @click="$router.push('/')"/>
 
       <div class="wrapper desktop">
         <div class="navlink" v-for="(link, index) in links" :key="index">
@@ -61,7 +61,7 @@
           v-model="globalSearchText"
           type="text"
           placeholder="Search tutorials..."
-          class="search-input"
+          class="search-input addonWrapper"
         />
         <button type="submit" class="search-btn">
           <img src="@/assets/icons/search.svg" alt="search icon" />
@@ -225,17 +225,20 @@ form img:hover {
   padding: 20px;
   border-top: 1px solid #2a2a2a;
   animation: slideDown 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .mobile-links {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   margin-bottom: 16px;
+  color: var(--c-grey);
 }
 
 .mobile-links a {
-  color: var(--c-white);
   font-size: 1.5rem;
   text-decoration: none;
 }
@@ -257,5 +260,9 @@ form img:hover {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+.addonWrapper{
+  flex-grow: 1;
 }
 </style>

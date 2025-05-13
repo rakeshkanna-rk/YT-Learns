@@ -30,5 +30,12 @@ h1 {
   color: var(--c-white);
   margin-bottom: 40px;
   font-weight: 700;
+  line-height: 0.25;
 }
+
+p {
+  font-size: 1.2rem;
+  color: var(--c-grey);
+  opacity: 0.8;
+  text-align: center;}
 </style>
