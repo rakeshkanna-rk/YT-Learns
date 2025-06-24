@@ -97,11 +97,11 @@ function setTag(tag) {
 
 function forceTwoLineText(text, type) {
   // Adjust based on average character width; here we assume < 50 chars = short
-  if (text.length < 25 && !text.includes("\n") && type=="h1") {
+  if (text.length < 25 && !text.includes("\n") && type == "h1") {
     console.info(text, "->", text + "\n added line break");
     return text + "<br>"; // force line break
   }
-  if (text.length < 30 && !text.includes("\n") && type=="p") {
+  if (text.length < 30 && !text.includes("\n") && type == "p") {
     console.info(text, "->", text + "\n added line break");
     return text + "<br>"; // force line break
   }
@@ -174,17 +174,25 @@ watch(
     </form>
 
     <!-- Tag Filter -->
-    <div class="flex flex-wrap gap-2 mt-4">
-      <button
-        v-for="tag in allTags"
-        :key="tag"
-        @click="setTag(tag)"
-        :class="[activeTag === tag ? 'tag-active' : 'tag']"
-        class="tag"
+    <details class="w-full mt-3 mx-auto border-none rounded-md text-white">
+      <summary
+        class="cursor-pointer px-4 py-3 font-semibold hover:bg-neutral-700 rounded-md list-none"
       >
-        {{ tag }}
-      </button>
-    </div>
+        Click to see tags
+      </summary>
+
+      <div class="flex flex-wrap gap-2 mt-4">
+        <button
+          v-for="tag in allTags"
+          :key="tag"
+          @click="setTag(tag)"
+          :class="[activeTag === tag ? 'tag-active' : 'tag']"
+          class="tag"
+        >
+          {{ tag }}
+        </button>
+      </div>
+    </details>
 
     <!-- Results -->
     <div v-if="filtered.length" class="card-list">
@@ -209,7 +217,7 @@ watch(
             </p>
 
             <div v-if="item.documents?.length" class="mt-2">
-              <p class="text-sm font-medium ">Docs:</p>
+              <p class="text-sm font-medium">Docs:</p>
               <a
                 v-for="doc in item.documents"
                 :key="doc.url"
@@ -371,7 +379,7 @@ form img {
   color: var(--c-white);
 }
 
-.doc-link{
+.doc-link {
   color: var(--c-blue);
   padding: 5px 10px;
   text-decoration: none;
@@ -383,7 +391,7 @@ form img {
   opacity: 0.8;
 }
 
-.doc-link:hover{
+.doc-link:hover {
   opacity: 1;
 }
 
@@ -395,7 +403,16 @@ form img {
 
 .author {
   display: -webkit-box;
-  -webkit-line-clamp: 1; 
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+
+details summary {
+  cursor: pointer;
+  border: 2px solid var(--c-blue);
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
 }
 </style>
